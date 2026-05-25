@@ -1,0 +1,59 @@
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Introduction" />
+
+# Pulkit Design System
+
+Pulkit Design System is a compact, production-minded React component library built to demonstrate how a design system can connect design tokens, accessible primitives, package boundaries, documentation, and tests.
+
+## What This System Solves
+
+Design systems matter because they turn repeated interface decisions into shared infrastructure. The goal is not just prettier buttons. It is faster product delivery, fewer inconsistent states, better accessibility defaults, and a clearer collaboration model between design and engineering.
+
+## Token Philosophy
+
+Tokens are the lowest-level contract. The `@pulkit-design-system/tokens` package exposes:
+
+- CSS variables for runtime theming.
+- A typed TypeScript token object for application code.
+- JSON tokens for tooling and design handoff.
+
+The token model separates primitives from semantic decisions:
+
+- Primitive tokens hold raw values such as `blue600`, `space-4`, and `radius-md`.
+- Semantic tokens describe intent such as background, foreground, border, danger, success, overlay, and focus ring.
+
+Theme-specific values are expressed through semantic variables like `--pds-color-bg`, `--pds-color-fg`, and `--pds-color-primary`. Components depend on semantic intent instead of hard-coded palette values, which keeps light and dark themes maintainable.
+
+## Accessibility Approach
+
+Components use native HTML semantics first. Form controls preserve label relationships, required state, invalid state, disabled state, and descriptive text. Dialog behavior includes portal rendering, scroll locking, focus placement, focus restoration, Escape dismissal, overlay dismissal, and focus trapping. Storybook includes the a11y addon so accessibility checks can be part of everyday component review.
+
+## Versioning Strategy
+
+In a real company, package versions would follow semantic versioning:
+
+- Patch: visual fixes, documentation changes, non-breaking internal improvements.
+- Minor: new components, new variants, additive props.
+- Major: breaking prop, token, or behavior changes with migration notes.
+
+## Consuming the Package
+
+```tsx
+import "@pulkit-design-system/react/styles.css";
+import { Button, FormField, Input } from "@pulkit-design-system/react";
+
+export function Example() {
+  return (
+    <FormField label="Email" hint="Use your work email">
+      <Input type="email" />
+    </FormField>
+  );
+}
+```
+
+Teams can also import token CSS directly:
+
+```tsx
+import "@pulkit-design-system/tokens/css";
+```

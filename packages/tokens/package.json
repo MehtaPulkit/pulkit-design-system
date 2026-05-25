@@ -1,0 +1,42 @@
+{
+  "name": "@pulkit-design-system/tokens",
+  "version": "0.1.1",
+  "description": "Design tokens for Pulkit Design System.",
+  "license": "MIT",
+  "keywords": [
+    "design-tokens",
+    "css-variables",
+    "theme",
+    "typescript"
+  ],
+  "type": "module",
+  "sideEffects": [
+    "dist/css/*.css"
+  ],
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./css": "./dist/css/tokens.css",
+    "./tokens.json": "./dist/tokens.json",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rimraf dist && vite build && node scripts/copy-assets.mjs",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "rimraf": "^6.0.1"
+  }
+}

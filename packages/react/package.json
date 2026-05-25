@@ -1,0 +1,54 @@
+{
+  "name": "@pulkit-design-system/react",
+  "version": "0.1.1",
+  "description": "Accessible React components for Pulkit Design System.",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "design-system",
+    "components",
+    "typescript",
+    "accessibility"
+  ],
+  "type": "module",
+  "sideEffects": [
+    "dist/styles.css"
+  ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rimraf dist && vite build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint src --max-warnings=0"
+  },
+  "dependencies": {
+    "@pulkit-design-system/tokens": "0.1.0"
+  },
+  "peerDependencies": {
+    "react": ">=18.2.0 || >=19.0.0",
+    "react-dom": ">=18.2.0 || >=19.0.0"
+  },
+  "devDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "rimraf": "^6.0.1"
+  }
+}

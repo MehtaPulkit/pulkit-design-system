@@ -1,0 +1,24 @@
+{
+  "name": "@pulkit-design-system/storybook",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "storybook": "storybook dev -p 6006 --disable-telemetry",
+    "build-storybook": "storybook build --disable-telemetry"
+  },
+  "dependencies": {
+    "@pulkit-design-system/react": "0.1.0",
+    "@pulkit-design-system/tokens": "0.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "8.6.18",
+    "@storybook/addon-docs": "8.6.18",
+    "@storybook/addon-essentials": "8.6.18",
+    "@storybook/react": "8.6.18",
+    "@storybook/react-vite": "8.6.18",
+    "storybook": "8.6.18"
+  }
+}
